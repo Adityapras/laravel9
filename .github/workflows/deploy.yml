@@ -68,7 +68,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-            cd public_html && ls -al
+            cd public_html/laravel9 && git pull origin master
 
       # - name: Deploy to Shared Hosting
       #   run: |
