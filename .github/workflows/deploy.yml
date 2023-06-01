@@ -1,18 +1,18 @@
 name: 🚀 Laravel Deploy
 
-# on:
-#   push:
-#     branches:
-#       - main
 on:
-  workflow_dispatch:
-    inputs:
-      # branch:
-      #   description: "Branch to deploy to"
-      #   required: true
-      messages:
-        description: "Type deployment messages"
-        required: true
+  push:
+    branches:
+      - master
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       # branch:
+#       #   description: "Branch to deploy to"
+#       #   required: true
+#       messages:
+#         description: "Type deployment messages"
+#         required: true
 
 jobs:
   deploy:
@@ -69,7 +69,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             whoami
-            cd /public_html/laravel9 && ls -al
+            cd www/public_html/laravel9 && ls -al
 
       # - name: Deploy to Shared Hosting
       #   run: |
