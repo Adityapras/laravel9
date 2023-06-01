@@ -45,8 +45,8 @@ jobs:
       - name: Clear Route Cache
         run: php artisan route:cache
 
-      - name: Clear Known Hosts
-        run: ssh-keygen -R laravel9.jasatebangpohonjabodetabek.com
+      # - name: Clear Known Hosts
+      #   run: ssh-keygen -R laravel9.jasatebangpohonjabodetabek.com
 
       - name: Verify and Update Known Hosts
         run: |
