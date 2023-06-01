@@ -50,4 +50,4 @@ jobs:
 
       - name: Deploy to Shared Hosting
         run: |
-          ssh jass8211@laravel9.jasatebangpohonjabodetabek.com "cd /public_html/laravel9 && git pull origin main"
+          ssh jass8211@laravel9.jasatebangpohonjabodetabek.com "cd /public_html/laravel9 && git pull origin master"
