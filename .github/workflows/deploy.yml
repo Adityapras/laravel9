@@ -36,8 +36,8 @@ jobs:
       - name: Generate Application Key
         run: php artisan key:generate
 
-      - name: Run Database Migrations
-        run: php artisan migrate --force
+      # - name: Run Database Migrations
+      #   run: php artisan migrate --force
 
       - name: Cache Configuration
         run: php artisan config:cache
