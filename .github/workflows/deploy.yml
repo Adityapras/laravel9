@@ -27,23 +27,23 @@ jobs:
         with:
           php-version: '8.1' # Ganti dengan versi PHP yang sesuai dengan Laravel 9
 
-      - name: Install Dependencies
-        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+      # - name: Install Dependencies
+      #   run: composer install --no-interaction --prefer-dist --optimize-autoloader
 
-      - name: Generate Environment File
-        run: cp .env.example .env
+      # - name: Generate Environment File
+      #   run: cp .env.example .env
 
-      - name: Generate Application Key
-        run: php artisan key:generate
+      # - name: Generate Application Key
+      #   run: php artisan key:generate
 
-      # - name: Run Database Migrations
-      #   run: php artisan migrate --force
+      # # - name: Run Database Migrations
+      # #   run: php artisan migrate --force
 
-      - name: Cache Configuration
-        run: php artisan config:cache
+      # - name: Cache Configuration
+      #   run: php artisan config:cache
 
-      - name: Clear Route Cache
-        run: php artisan route:cache
+      # - name: Clear Route Cache
+      #   run: php artisan route:cache
 
       # - name: Clear Known Hosts
       #   run: ssh-keygen -R laravel9.jasatebangpohonjabodetabek.com
@@ -69,6 +69,11 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd public_html/laravel9 && git pull origin master
+            composer install --no-interaction --prefer-dist --optimize-autoloader
+            cp .env.example .env
+            php artisan key:generate
+            php artisan config:cache
+            php artisan route:cache
 
       # - name: Deploy to Shared Hosting
       #   run: |
