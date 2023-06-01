@@ -1,0 +1,53 @@
+name: 🚀 Laravel Deploy
+
+# on:
+#   push:
+#     branches:
+#       - main
+on:
+  workflow_dispatch:
+    inputs:
+      # branch:
+      #   description: "Branch to deploy to"
+      #   required: true
+      messages:
+        description: "Type deployment messages"
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1' # Ganti dengan versi PHP yang sesuai dengan Laravel 9
+
+      - name: Install Dependencies
+        run: composer install --no-interaction --prefer-dist --optimize-autoloader
+
+      - name: Generate Environment File
+        run: cp .env.example .env
+
+      - name: Generate Application Key
+        run: php artisan key:generate
+
+      - name: Run Database Migrations
+        run: php artisan migrate --force
+
+      - name: Cache Configuration
+        run: php artisan config:cache
+
+      - name: Clear Route Cache
+        run: php artisan route:cache
+
+      - name: Clear View Cache
+        run: php artisan view:cache
+
+      - name: Deploy to Shared Hosting
+        run: |
+          ssh jass8211@laravel9.jasatebangpohonjabodetabek.com "cd /public_html/laravel9 && git pull origin main"
