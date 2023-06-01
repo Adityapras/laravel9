@@ -45,8 +45,8 @@ jobs:
       - name: Clear Route Cache
         run: php artisan route:cache
 
-      - name: Clear View Cache
-        run: php artisan view:cache
+      # - name: Clear View Cache
+      #   run: php artisan view:cache
 
       - name: Deploy to Shared Hosting
         run: |
