@@ -48,19 +48,19 @@ jobs:
       # - name: Clear Known Hosts
       #   run: ssh-keygen -R laravel9.jasatebangpohonjabodetabek.com
 
-      - name: Verify and Update Known Hosts
-        run: |
-          mkdir -p ~/.ssh
-          touch ~/.ssh/known_hosts
-          ssh-keyscan -p 2223 laravel9.jasatebangpohonjabodetabek.com >> ~/.ssh/known_hosts
+      # - name: Verify and Update Known Hosts
+      #   run: |
+      #     mkdir -p ~/.ssh
+      #     touch ~/.ssh/known_hosts
+      #     ssh-keyscan -p 2223 laravel9.jasatebangpohonjabodetabek.com >> ~/.ssh/known_hosts
 
-      - name: SSH into Remote Server
-        run: |
-         ssh -p 2223 jass8211@laravel9.jasatebangpohonjabodetabek.com "connection succes"
+      # - name: SSH into Remote Server
+      #   run: |
+      #    ssh -p 2223 jass8211@laravel9.jasatebangpohonjabodetabek.com "connection succes"
 
       # - name: Clear View Cache
       #   run: php artisan view:cache
 
       - name: Deploy to Shared Hosting
         run: |
-          ssh -p 2223 jass8211@laravel9.jasatebangpohonjabodetabek.com "cd /public_html/laravel9 && git pull origin master"
+          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh -p ${{ secrets.SSH_PORT }} jass8211@laravel9.jasatebangpohonjabodetabek.com "cd /public_html/laravel9 && git pull origin master"
