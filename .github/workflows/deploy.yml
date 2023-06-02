@@ -69,7 +69,6 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             cd laravel9 && git pull origin master
-            composer update
             php artisan key:generate
             php artisan config:cache
             php artisan route:cache
