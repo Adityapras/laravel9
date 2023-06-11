@@ -1,9 +1,9 @@
 name: 🚀 Laravel Deploy
 
-on:
-  push:
-    branches:
-      - master
+# on:
+#   push:
+#     branches:
+#       - master
 # on:
 #   workflow_dispatch:
 #     inputs:

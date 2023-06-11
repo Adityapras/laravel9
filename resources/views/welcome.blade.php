@@ -19,6 +19,9 @@
                 font-family: 'Nunito', sans-serif;
             }
         </style>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900&display=swap"rel="stylesheet" />
+        @vite('resources/css/app.css')
+        @vite('resources/js/app.js')
     </head>
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
