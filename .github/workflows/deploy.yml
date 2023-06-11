@@ -4,15 +4,15 @@ name: 🚀 Laravel Deploy
 #   push:
 #     branches:
 #       - master
-# on:
-#   workflow_dispatch:
-#     inputs:
-#       # branch:
-#       #   description: "Branch to deploy to"
-#       #   required: true
-#       messages:
-#         description: "Type deployment messages"
-#         required: true
+on:
+  workflow_dispatch:
+    inputs:
+      # branch:
+      #   description: "Branch to deploy to"
+      #   required: true
+      messages:
+        description: "Type deployment messages"
+        required: true
 
 jobs:
   deploy:
