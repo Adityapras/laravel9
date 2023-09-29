@@ -2,7 +2,10 @@
     "name": "laravel/laravel",
     "type": "project",
     "description": "The Laravel Framework.",
-    "keywords": ["framework", "laravel"],
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
     "license": "MIT",
     "require": {
         "php": "^8.0.2",
@@ -11,10 +14,12 @@
         "laravel/framework": "^9.19",
         "laravel/jetstream": "^3.0",
         "laravel/sanctum": "^3.1",
+        "laravel/telescope": "^4.16",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.12"
     },
     "require-dev": {
+        "doctrine/dbal": "^3.6",
         "fakerphp/faker": "^1.9.1",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.0.1",
@@ -64,5 +69,8 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "post-update-cmd": [
+        "@php artisan filament:upgrade"
+    ]
 }

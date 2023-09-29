@@ -15,21 +15,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $resource = [
-        'news' => [
-            'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/k4o57ookaa57o8/912a381098afdb30cf5c585d6a84c6b0a26dafe2.jpg',
-            'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/75k42ak2422o4o/cb3c95e7abaff50b9d7f3aa16b9c82d073ad5d42.jpg',
-            'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/175k2k7797a9k4/55f055553b0e5985df8705d011e7e6a858886e5f.jpg',
-            'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/39o415k472o87o/6c4cb9267b4d06514ca835688e7387148dce39b6.jpg'
-        ],
-        'featured' => [
-            'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption2.jpg',
-            'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/GTATrilogy.jpg',
-            'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadonline.jpg',
-            'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/V.jpg'
-        ]
-    ];
-    return view('home', ['resource' => $resource]);
+    // $resource = [
+    //     'news' => [
+    //         'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/k4o57ookaa57o8/912a381098afdb30cf5c585d6a84c6b0a26dafe2.jpg',
+    //         'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/75k42ak2422o4o/cb3c95e7abaff50b9d7f3aa16b9c82d073ad5d42.jpg',
+    //         'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/175k2k7797a9k4/55f055553b0e5985df8705d011e7e6a858886e5f.jpg',
+    //         'https://media-rockstargames-com.akamaized.net/tina-uploads/posts/39o415k472o87o/6c4cb9267b4d06514ca835688e7387148dce39b6.jpg'
+    //     ],
+    //     'featured' => [
+    //         'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadredemption2.jpg',
+    //         'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/GTATrilogy.jpg',
+    //         'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/reddeadonline.jpg',
+    //         'https://media-rockstargames-com.akamaized.net/rockstargames-newsite/img/global/games/fob/640/V.jpg'
+    //     ]
+    // ];
+    return view('home');
+    // echo env('APP_URL');
 });
 
 Route::get('/videos/{id}', function () {
